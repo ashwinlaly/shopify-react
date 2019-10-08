@@ -12,8 +12,8 @@ import { css } from '@emotion/core';
 const Products = React.lazy( () => import('./components/Products'));
 const ProductDetails = React.lazy( () => import('./components/ProductDetails'));
 const PageNotFound = React.lazy( () => import('./components/PageNotFound'));
-const Login = React.lazy( () => import('./components/Auth/Login'));
 const Signin = React.lazy( () => import('./components/Auth/Signin'));
+const Signup = React.lazy( () => import('./components/Auth/Signup'));
 
 const RotateLoad = () => {
 
@@ -34,7 +34,6 @@ const RotateLoad = () => {
   )
 }
 
-
 const App = () => {
 
   const navLink = {
@@ -50,16 +49,16 @@ const App = () => {
           </Navbar.Brand>
           <Nav >
             <Nav.Link as={Link} to="/products" style={navLink}>products</Nav.Link>
-            <Nav.Link as={Link} to="/login" style={{ color : 'white' }}>Login</Nav.Link>
             <Nav.Link as={Link} to="/signin" style={{ color : 'white' }}>Sign in</Nav.Link>
+            <Nav.Link as={Link} to="/signup" style={{ color : 'white' }}>Sign Up</Nav.Link>
           </Nav>
         </Navbar>
           <Switch>
             <Route path='/' exact component={ Products }/>
             <Route path='/products' component={ Products }/>
             <Route path="/product/details/:id" component= { ProductDetails } />
-            <Route path="/login" component={ Login } />
             <Route path="/signin" component={ Signin } />
+            <Route path="/signup" component={ Signup } />
             <Route component={ PageNotFound }/>
           </Switch>
       </div>

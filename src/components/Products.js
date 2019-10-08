@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -26,7 +27,7 @@ const Products = () => {
                                         <Card.Text>
 
                                         </Card.Text>
-                                        <Button variant="primary" href={`/product/details/${v.id}`}>More</Button>
+                                        <Button variant="primary" as={Link} to={`/product/details/${v.id}`}>More</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>
